@@ -1,0 +1,25 @@
+{% extends 'webapp/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} {{ block.super }} - Регистрация {% endblock %}
+{% block content %}
+<body>
+<br>
+<div class="container bg-light shadow-md p-5 form-layout">
+    <h3>Cоздать аккаунт</h3>
+    <h5>Управляй клиентской базой</h5>
+    <hr>
+    <br>
+    <form method="post" autocomplete="off">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <buttton type="submit" class="btn btn-primary w-100 btn-block p-2">Создать аккаунт</buttton>
+    </form>
+    <br>
+    <div class="text-center">
+        <p>Уже зарегистрированы?</p>
+        <a href="{% url '' %}">Войти</a>
+    </div>
+</div>
+</body>
+{% endblock content %}
