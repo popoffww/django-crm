@@ -1,10 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block title %}
+{{ block.super }} - Список клиентов
+{% endblock %}
+
+{% block content %}
+
+    <h3 class="mt-3"> Добро пожаловать, {{user}}! 👋 </h3>
+
+    <hr>
+
+    <a class="btn btn-outline-primary btn-sm" href="{% url '' %}">
+
+        Создать запись &nbsp; <i class="fa fa-plus-circle" aria-hidden="true"></i>
+
+    </a>
+
+    <hr>
+
+    <table class="table table-hover table-bordered">
+
+        <thead class="table-light">
+
+            <tr>
+
+                <th scope="col"> ID </th>
+                <th scope="col"> Имя </th>
+                <th scope="col"> Email </th>
+                <th scope="col"> Телефон </th>
+                <th scope="col"> Адрес </th>
+                <th scope="col"> Город </th>
+                <th scope="col"> Регион </th>
+                <th scope="col"> Страна </th>
+
+                <th scope="col"> Дата регистрации</th>
+
+                <th scope="col"> View </th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% if records %}
+
+            {% for record in records %}
+
+            <tr>
+
+                <td> {{record.id}} </td>
+
+                <td> {{record.first_name}}  {{record.last_name}} </td>
+
+                <td> {{record.email}} </td>
+
+                <td> {{record.phone}} </td>
+                <td> {{record.address}} </td>
+                <td> {{record.city}} </td>
+                <td> {{record.province}} </td>
+                <td> {{record.country}} </td>
+
+                <td> {{record.creation_date}} </td>
+
+                <td> <a class="btn btn-success btn-sm" href="{% url ''  %}"> <i class="fa fa-eye" aria-hidden="true"></i> </a> </td>
+
+            </tr>
+
+            {% endfor %}
+
+        {% endif %}
+
+
+        </tbody>
+
+
+    </table>
+
+
+{% endblock %}

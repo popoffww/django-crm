@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
@@ -27,12 +26,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
+    # pip install django-admin-interface
+    # Add admin_interface and colorfield to settings.INSTALLED_APPS before django.contrib.admin
     "admin_interface",
     "colorfield",
+    #
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -40,10 +41,14 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "webapp",
+    # pip install django-crispy-forms==1.14.0
+    # в этом проекте установлена версия crispy-forms==1.14.0
+    # последняя версия crispy-forms имеет другой индекс
     "crispy_forms",
+    # pip install django-extensions
     "django_extensions",
 ]
-
+# crispy_forms
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 MIDDLEWARE = [
@@ -76,7 +81,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "crm.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
@@ -86,7 +90,6 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -117,7 +120,6 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/

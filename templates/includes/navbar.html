@@ -1,7 +1,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-center">
 
-    <a class="navbar-brand main-heading" href="{% url '' %}"> 
+    <a class="navbar-brand main-heading" href="{% url '' %}">
             
       &nbsp; ProjectX
     
@@ -34,7 +34,7 @@
   
             <li class="nav-item">
         
-              <a class="nav-link" href="{% url '' %}">Dashboard &nbsp; <i class="fa fa-home" aria-hidden="true"></i> </a>
+              <a class="nav-link" href="{% url 'dashboard' %}">Dashboard &nbsp; <i class="fa fa-home" aria-hidden="true"></i> </a>
   
             </li>
   
@@ -44,7 +44,7 @@
   
             <li class="nav-item">
   
-              <a class="nav-link" href="{% url '' %}">Sign out &nbsp; <i class="fa fa-sign-out" aria-hidden="true"></i> </a>
+              <a class="nav-link" href="{% url 'user_logout' %}">Sign out &nbsp; <i class="fa fa-sign-out" aria-hidden="true"></i> </a>
   
             </li>
   
@@ -65,7 +65,7 @@
   
         <li class="nav-item">
   
-          <a class="nav-link" href="{% url '' %}">Login</a>
+          <a class="nav-link" href="{% url 'my_login' %}">Login</a>
   
         </li>
   
