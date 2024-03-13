@@ -4,6 +4,7 @@ django-admin-interface==0.28.6
 django-colorfield==0.11.0
 django-crispy-forms==1.14.0
 django-extensions==3.2.3
+django-silk==5.1.0
 pillow==10.2.0
 python-slugify==8.0.4
 sqlparse==0.4.4

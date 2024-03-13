@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     "crispy_forms",
     # pip install django-extensions
     "django_extensions",
+    # pip install django-silk
+    "silk",
 ]
 # crispy_forms
 CRISPY_TEMPLATE_PACK = "bootstrap4"
